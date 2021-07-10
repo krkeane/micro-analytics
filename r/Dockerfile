@@ -13,4 +13,6 @@ COPY R ${HOME}
 
 RUN Rscript -e "install.packages('RestRserve')"
 
+WORKDIR ${HOME} 
+
 CMD Rscript ${HOME}/app.R
