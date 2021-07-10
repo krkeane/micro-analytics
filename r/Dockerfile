@@ -1,10 +1,16 @@
 FROM alpine:latest
 
-ENV INSTALL_DIR /opt/demo/R
+EXPOSE 8080
 
-RUN apk --no-cache add R;\
-  mkdir -p ${INSTALL_DIR}
+ENV HOME /home/R
 
-COPY R ${INSTALL_DIR}
+RUN apk --no-cache add \
+  build-base \
+  R R-dev R-doc R-mathlib ; \
+  mkdir -p ${HOME}
 
-CMD Rscript ${INSTALL_DIR}/info.R
+COPY R ${HOME}
+
+RUN Rscript -e "install.packages('RestRserve')"
+
+CMD Rscript ${HOME}/app.R
