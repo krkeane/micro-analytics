@@ -9,10 +9,11 @@ RUN apk --no-cache add \
   R R-dev R-doc R-mathlib ; \
   mkdir -p ${HOME}
 
-COPY R ${HOME}
-
+COPY R/.Rprofile ${HOME}
 RUN Rscript -e "install.packages('RestRserve')"
 
 WORKDIR ${HOME} 
+
+COPY R ${HOME}
 
 CMD Rscript ${HOME}/app.R
