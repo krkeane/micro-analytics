@@ -16,4 +16,4 @@ WORKDIR ${HOME}
 
 COPY R ${HOME}
 
-CMD Rscript ${HOME}/app.R
+CMD ${HOME}/app.R
