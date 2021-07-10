@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: ADO2 Incrementor OpenAPI
+  title: OpenAPI for R
   version: '1.0'
 servers:
 - url: /

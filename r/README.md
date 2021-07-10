@@ -9,4 +9,4 @@ docker build -t test .
 docker run -p 8080:8080 localhost/test
 ```
 
-Then follow the [swagger](http://localhost:8080/swagger) documentation.
+Then follow the [swagger](http://localhost:8080) documentation.
