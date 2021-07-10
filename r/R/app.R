@@ -15,10 +15,10 @@ incr_handler = function(request, response) {
   readRenviron('/etc/os-release')
   pn <- Sys.getenv("PRETTY_NAME")
   response$body = sprintf(
-    "\n%s\n%s\n%s\n%s\n\n%d+1 == %d\n\n",
-    pn,
+    "\n%s \"%s\"\n%s %s\n\n\t%d+1 == %d\n\n",
     R.Version()$version.string,
     R.Version()$nickname,
+    pn,
     R.Version()$platform,
     n,
     calc_incr(n)
