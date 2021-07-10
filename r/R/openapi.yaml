@@ -1,0 +1,28 @@
+openapi: 3.0.1
+info:
+  title: ADO2 Incrementor OpenAPI
+  version: '1.0'
+servers:
+- url: /
+paths:
+  /incr:
+    get:
+      description: Increment an integer number
+      parameters:
+        - name: "n"
+          description: "integer number to increment"
+          in: query
+          schema:
+            type: integer
+          example: 10
+          required: true
+      responses:
+        200:
+          description: API response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 5
+        400:
+          description: Bad Request
