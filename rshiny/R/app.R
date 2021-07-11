@@ -1,5 +1,16 @@
 library(shiny)
 
+
+readRenviron('/etc/os-release')
+pn <- Sys.getenv("PRETTY_NAME")
+infoText <- sprintf(
+  "\n%s \"%s\"\n%s %s\n\n",
+  R.Version()$version.string,
+  R.Version()$nickname,
+  pn,
+  R.Version()$platform
+)
+
 # Define UI for app that draws a histogram ----
 ui <- fluidPage(
 
@@ -17,7 +28,8 @@ ui <- fluidPage(
                   label = "Number of bins:",
                   min = 1,
                   max = 50,
-                  value = 30)
+                  value = 30),
+      pre(infoText)
 
     ),
 
