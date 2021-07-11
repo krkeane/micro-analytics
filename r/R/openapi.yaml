@@ -26,3 +26,8 @@ paths:
                 example: 5
         400:
           description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: cat
