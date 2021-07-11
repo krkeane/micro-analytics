@@ -12,7 +12,7 @@ RUN [  "apk", "add", "--no-cache", "--update-cache", \
 
 RUN apk --no-cache add \
   build-base \
-  cairo \
+  cairo-dev libxt-dev \
   R R-dev R-doc R-mathlib ; \
   mkdir -p ${HOME}
 
