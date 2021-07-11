@@ -6,8 +6,8 @@ The example is [001-hello](https://github.com/rstudio/shiny-examples).
 
 ## Instructions
 ```
-docker build -t test .
-docker run -p 8080:8080 localhost/test
+docker build -t shiny .
+docker run -p 8080:8080 shiny
 ```
 
-Then view the app with your [browser](http://localhost:8080) documentation.
+Then view the app with your [browser](http://localhost:8080).
