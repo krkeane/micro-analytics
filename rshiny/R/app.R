@@ -12,7 +12,6 @@ infoText <- sprintf(
 
 ui <- fluidPage(
   titlePanel("Hello Shiny!"),
-  verbatimTextOutput(infoText),
   sidebarLayout(sidebarPanel(
     sliderInput(
       inputId = "bins",
@@ -20,9 +19,9 @@ ui <- fluidPage(
       min = 1,
       max = 50,
       value = 30
-    )
+    ),
+    pre(infoText)
   ),
-  
   mainPanel(plotOutput(outputId = "distPlot")))
 )
 
@@ -30,7 +29,6 @@ server <- function(input, output) {
   output$distPlot <- renderPlot({
     x    <- faithful$waiting
     bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
     hist(
       x,
       breaks = bins,
