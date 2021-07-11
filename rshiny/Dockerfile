@@ -10,6 +10,10 @@ RUN [  "apk", "add", "--no-cache", "--update-cache", \
         "automake=1.16.1-r0" \
 ]
 
+RUN apk --no-cache add msttcorefonts-installer fontconfig && \
+    update-ms-fonts && \
+    fc-cache -f
+
 RUN apk --no-cache add \
   build-base \
   cairo-dev libxt-dev \
@@ -18,7 +22,6 @@ RUN apk --no-cache add \
 
 COPY R/.Rprofile ${HOME}
 RUN Rscript -e "install.packages(c('Cairo','shiny'))"
-
 WORKDIR ${HOME} 
 
 COPY R ${HOME}
