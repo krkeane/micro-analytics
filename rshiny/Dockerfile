@@ -12,11 +12,12 @@ RUN [  "apk", "add", "--no-cache", "--update-cache", \
 
 RUN apk --no-cache add \
   build-base \
+  cairo \
   R R-dev R-doc R-mathlib ; \
   mkdir -p ${HOME}
 
 COPY R/.Rprofile ${HOME}
-RUN Rscript -e "install.packages('shiny')"
+RUN Rscript -e "install.packages('Cairo','shiny')"
 
 WORKDIR ${HOME} 
 
