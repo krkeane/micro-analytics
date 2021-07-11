@@ -1,3 +1,3 @@
 #!/usr/bin/env Rscript
-
-shiny::runApp('app.R',port=8080)
+options(shiny.port = 8080, shiny.host="0.0.0.0")
+shiny::runApp('app.R')
