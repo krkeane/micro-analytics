@@ -17,7 +17,7 @@ RUN apk --no-cache add \
   mkdir -p ${HOME}
 
 COPY R/.Rprofile ${HOME}
-RUN Rscript -e "install.packages('Cairo','shiny')"
+RUN Rscript -e "install.packages(c('Cairo','shiny'))"
 
 WORKDIR ${HOME} 
 
