@@ -22,4 +22,4 @@ WORKDIR ${HOME}
 
 COPY R ${HOME}
 
-CMD ${HOME}/app.R
+CMD ${HOME}/shinyApp.R
