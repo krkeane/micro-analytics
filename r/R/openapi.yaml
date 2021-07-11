@@ -3,10 +3,15 @@ info:
   title: OpenAPI for R
   version: '1.0'
 servers:
-- url: /
+- url: /v1
+tags:
+- name: g1
+  description: Group 1 analytics 
 paths:
   /incr:
     get:
+      tags:
+      - g1
       description: Increment an integer number
       parameters:
         - name: "n"

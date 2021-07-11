@@ -27,7 +27,7 @@ incr_handler = function(request, response) {
 
 app = Application$new()
 
-app$add_get(path = "/incr",
+app$add_get(path = "/v1/incr",
             FUN = incr_handler)
 
 app$add_openapi(path = "/openapi.yaml",
