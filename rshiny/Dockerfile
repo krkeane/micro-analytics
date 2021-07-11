@@ -10,7 +10,8 @@ RUN [  "apk", "add", "--no-cache", "--update-cache", \
         "automake=1.16.1-r0" \
 ]
 
-RUN apk --no-cache add msttcorefonts-installer fontconfig && \
+RUN apk --no-cache add msttcorefonts-installer \
+    fontconfig font-xfree86-type1 && \
     update-ms-fonts && \
     fc-cache -f
 
