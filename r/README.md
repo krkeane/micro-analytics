@@ -5,8 +5,8 @@ This demo uses the R package [RestRserve](https://cran.r-project.org/package=Res
 
 ## Instructions
 ```
-docker build -t test .
-docker run -p 8080:8080 localhost/test
+docker build -t r-test .
+docker run -p 8080:8080 r-test
 ```
 
 Then follow the [swagger](http://localhost:8080) documentation.
