@@ -12,7 +12,7 @@ docker build -t swagger_server .
 docker run -p 8080:8080 swagger_server
 ```
 
-With the server running, OpenAPI documentation is available 
+_With the server running_, OpenAPI documentation is available 
 [here](http://localhost:8080/v1/ui/).
 
 
